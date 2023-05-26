@@ -14,4 +14,6 @@
     <color name="sign_up_horizontal_line">#DDDADA</color>
     <color name="purple_one">#C58BF2</color>
     <color name="purple_two">#EEA4CE</color>
+    <color name="boarding_title_color">#1D1617</color>
+    <color name="boarding_subtitle_color">#7B6F72</color>
 </resources>
