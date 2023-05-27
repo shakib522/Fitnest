@@ -9,11 +9,18 @@
     <color name="white">#FFFFFFFF</color>
     <color name="sign_up_et_color">#F7F8F8</color>
     <color name="sign_up_text_color">#ADA4A5</color>
-    <color name="register_button_gradient_first">#92A3FD</color>
-    <color name="register_button_gradient_second">#9DCEFF</color>
+    <color name="blue_linear_1">#92A3FD</color>
+    <color name="blue_linear_2">#9DCEFF</color>
     <color name="sign_up_horizontal_line">#DDDADA</color>
     <color name="purple_one">#C58BF2</color>
     <color name="purple_two">#EEA4CE</color>
     <color name="boarding_title_color">#1D1617</color>
-    <color name="boarding_subtitle_color">#7B6F72</color>
+    <color name="gray_1">#7B6F72</color>
+    <color name="gray_2">#ADA4A5</color>
+    <color name="gray_3">#DDDADA</color>
+    <color name="black_color">#1D1617</color>
+    <color name="white_color">#FFFFFF</color>
+    <color name="purple_linear_1">#C58BF2</color>
+    <color name="purple_linear_2">#EEA4CE</color>
+    <color name="border_color">#F7F8F8</color>
 </resources>

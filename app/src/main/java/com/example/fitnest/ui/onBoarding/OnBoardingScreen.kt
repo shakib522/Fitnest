@@ -27,8 +27,10 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.fitnest.R
 import com.example.fitnest.ui.Pager
+import com.example.fitnest.ui.Screen
 import com.example.fitnest.ui.pages
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
@@ -36,13 +38,10 @@ import com.google.accompanist.pager.rememberPagerState
 import kotlinx.coroutines.launch
 
 @Composable
-fun OnBoardingScreen() {
-    OnBoardDesign()
-}
-
 @OptIn(ExperimentalPagerApi::class)
-@Composable
-fun OnBoardDesign() {
+fun OnBoardingScreen(
+    navController: NavController
+) {
     val coroutineScope = rememberCoroutineScope()
     val pagerState = rememberPagerState(0)
     Column(
@@ -80,15 +79,16 @@ fun OnBoardDesign() {
                 .padding(10.dp)
         ) {
 
-            val animatedProgress = animateFloatAsState(targetValue = (pagerState.currentPage+1)/4f)
+            val animatedProgress =
+                animateFloatAsState(targetValue = (pagerState.currentPage + 1) / 4f)
 
             CircularProgressIndicator(
-                color = colorResource(R.color.register_button_gradient_first),
+                color = colorResource(R.color.blue_linear_1),
                 strokeWidth = 3.dp,
                 progress = animatedProgress.value,
                 modifier = Modifier
                     .requiredSize(65.dp)
-                )
+            )
 
             IconButton(
                 modifier = Modifier
@@ -96,8 +96,8 @@ fun OnBoardDesign() {
                     .background(
                         Brush.horizontalGradient(
                             colors = listOf(
-                                colorResource(R.color.register_button_gradient_second),
-                                colorResource(R.color.register_button_gradient_first)
+                                colorResource(R.color.blue_linear_1),
+                                colorResource(R.color.blue_linear_2)
                             )
                         ),
                         shape = RoundedCornerShape(30.dp)
@@ -105,9 +105,16 @@ fun OnBoardDesign() {
                     .size(50.dp),
                 onClick = {
                     coroutineScope.launch {
-                        pagerState.animateScrollToPage(
-                            if (pagerState.currentPage < 3) pagerState.currentPage + 1 else 3
-                        )
+                        if (pagerState.currentPage < 3) {
+                            pagerState.animateScrollToPage(
+                                pagerState.currentPage + 1
+                            )
+                        } else {
+                            navController.navigate(
+                                Screen.SignUp.route
+                            )
+                        }
+
                     }
                 }
             ) {
@@ -122,11 +129,10 @@ fun OnBoardDesign() {
 
 
     }
-
 }
 
 @Preview(showBackground = true)
 @Composable
 fun PreviewOnBoard() {
-    OnBoardDesign()
+   // OnBoardingScreen()
 }

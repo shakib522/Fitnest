@@ -67,7 +67,7 @@ fun BoardingScreenContent(
                 fontFamily = poppinsRegular,
                 fontSize = 14.sp
             ),
-            color = colorResource(R.color.boarding_subtitle_color)
+            color = colorResource(R.color.gray_1)
         )
 
     }

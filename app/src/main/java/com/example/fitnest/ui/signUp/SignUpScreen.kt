@@ -186,8 +186,8 @@ fun SignUpScreen(navController:NavController) {
                     .background(
                         Brush.linearGradient(
                             colors = listOf(
-                                colorResource(R.color.register_button_gradient_second),
-                                colorResource(R.color.register_button_gradient_first)
+                                colorResource(R.color.blue_linear_1),
+                                colorResource(R.color.blue_linear_2)
                             )
                         ),
                         shape = RoundedCornerShape(30.dp)

@@ -5,13 +5,15 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.fitnest.ui.home.HomeScreen
+import com.example.fitnest.ui.intro.IntroScreen
 import com.example.fitnest.ui.onBoarding.OnBoardingScreen
 import com.example.fitnest.ui.signUp.SignUpScreen
 
 @Composable
 fun Navigation(){
+
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = Screen.OnBoarding.route){
+    NavHost(navController = navController, startDestination = Screen.IntroScreen.route){
         composable(
             route = Screen.SignUp.route
         ){
@@ -27,7 +29,10 @@ fun Navigation(){
         composable(
             route = Screen.OnBoarding.route
         ){
-            OnBoardingScreen()
+            OnBoardingScreen(navController)
+        }
+        composable(route = Screen.IntroScreen.route){
+            IntroScreen(navController)
         }
     }
 }
